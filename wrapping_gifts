@@ -1,0 +1,17 @@
+import pygame
+window = pygame.display.set_mode((800,600 ))
+def pixel(x,y):
+    window.set_at((x,y),"Red")
+run = True
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+    pressed = pygame.key.get_pressed()
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.button == 1:
+            x,y = event.pos
+            pixel(x,y)
+
+
+    pygame.display.flip()
